@@ -94,8 +94,19 @@ const caseCheck = document.getElementById("case");
 genBtn.addEventListener("click", generate);
 
 function generate() {
+  checkLength();
   shuffle();
+  output.innerHTML = "";
   output.innerHTML = `<p>${passwordArray.join("")}</p>`;
+}
+
+//Check Length
+function checkLength() {
+  if (length.value == 0) {
+    alert("Please Choose A Number");
+  } else if (length.value > 100) {
+    alert("Please Choose A Number Under 100");
+  }
 }
 
 //Shuffle characters
@@ -131,7 +142,7 @@ function shuffle() {
   }
 
   for (let i = 0; i < length.value; i++) {
-    passwordArray.push(fullArray[i]);
+    passwordArray.splice(i, 1, fullArray[i]);
   }
   console.log(passwordArray);
 }
