@@ -3,7 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div id="contentContainer">
+      <h1>PASSWORD GENERATOR</h1>
+      <div id="parameters">
+        <div class="parameter">
+          <label for="length">Password length:</label>
+          <input id="length" name="length" type="number" min="1" max="100" />
+        </div>
+        <div class="parameter">
+          <label for="special">Allow special characters:</label>
+          <input id="special" name="special" type="checkbox" />
+        </div>
+        <div class="parameter">
+          <label for="numbers">Allow numbers:</label>
+          <input id="numbers" name="numbers" type="checkbox" />
+        </div>
+        <div class="parameter">
+          <label for="case">Allow uppercase:</label>
+          <input id="case" name="case" type="checkbox" />
+        </div>
+      </div>
+      <button id="genBtn">GENERATE PASSWORD</button>
+      <div id="password"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
